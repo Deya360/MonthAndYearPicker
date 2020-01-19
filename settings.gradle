@@ -1,2 +1,2 @@
-include ':monthandyearpicker', ':sample'
-include ':app', ':app'
+include ':monthandyearpicker'
+rootProject.name='MonthAndYearPicker'

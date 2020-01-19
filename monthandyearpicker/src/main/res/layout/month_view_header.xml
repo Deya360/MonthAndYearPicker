@@ -19,6 +19,7 @@
         android:textColor="@android:color/primary_text_dark_nodisable"/>
 
     <LinearLayout
+        android:id="@+id/headerLy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -28,8 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="@dimen/datepicker_header_label_start_padding"
+            android:paddingRight="@dimen/datepicker_header_label_end_padding"
             tools:text="@string/label_month"
             android:textSize="35sp"
             android:textColor="@android:color/primary_text_dark_nodisable"/>
@@ -39,8 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="@dimen/datepicker_header_label_end_padding"
+            android:paddingRight="@dimen/datepicker_header_label_start_padding"
             tools:text="@string/label_year"
             android:textSize="35sp"
             android:textColor="@android:color/primary_text_dark_nodisable"/>
