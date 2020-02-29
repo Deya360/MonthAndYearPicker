@@ -241,12 +241,14 @@ class MonthPickerView extends FrameLayout {
                 Log.d("----------------", "MonthPickerDialogStyle selected month = " + selectedMonth);
                 MonthPickerView.this._selectedMonth = selectedMonth;
                 _month.setText(_monthNames[selectedMonth]);
-                if (!_showMonthOnly) {
-                    _monthList.setVisibility(View.GONE);
-                    _yearView.setVisibility(View.VISIBLE);
-                    _month.setTextColor(_headerFontColorNormal);
-                    _year.setTextColor(_headerFontColorSelected);
-                }
+
+                /* Commented to disable the following behaviour: after selecting month, year view is auto selected */
+//                if (!_showMonthOnly) {
+//                    _monthList.setVisibility(View.GONE);
+//                    _yearView.setVisibility(View.VISIBLE);
+//                    _month.setTextColor(_headerFontColorNormal);
+//                    _year.setTextColor(_headerFontColorSelected);
+//                }
                 if (_onMonthChanged != null) {
                     _onMonthChanged.onMonthChanged(selectedMonth);
                 }
@@ -421,14 +423,15 @@ class MonthPickerView extends FrameLayout {
         _year.setTextColor(_headerFontColorSelected);
         _month.setTextColor(_headerFontColorNormal);
 
-        headerLy.removeViewAt(0);
-        headerLy.addView(_month);
-
-        int paddingStart = (int) getResources().getDimension(R.dimen.datepicker_header_label_start_padding);
-        int paddingEnd = (int) getResources().getDimension(R.dimen.datepicker_header_label_end_padding);
-
-        _month.setPadding(paddingEnd, _month.getPaddingTop(), paddingStart, _month.getPaddingBottom());
-        _year.setPadding(paddingStart, _year.getPaddingTop(), paddingEnd, _year.getPaddingBottom());
+        // What was I thinking??, this is stupid.
+//        headerLy.removeViewAt(0);
+//        headerLy.addView(_month);
+//
+//        int paddingStart = (int) getResources().getDimension(R.dimen.datepicker_header_label_start_padding);
+//        int paddingEnd = (int) getResources().getDimension(R.dimen.datepicker_header_label_end_padding);
+//
+//        _month.setPadding(paddingEnd, _month.getPaddingTop(), paddingStart, _month.getPaddingBottom());
+//        _year.setPadding(paddingStart, _year.getPaddingTop(), paddingEnd, _year.getPaddingBottom());
     }
 
     public interface OnDateSet{
